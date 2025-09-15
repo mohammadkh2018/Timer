@@ -7,7 +7,6 @@
         <div class="buttons">
             <div class="col-6">
                 <button style="color: black;" class="btn btn-primary startButton" [disabled]="disableStart" [title]="titleBTN" (click)="startTimer()">
-                    <!-- {{statusButton}} -->
                     <ng-container *ngIf="statusButton === 'Play'"><i class="fa-solid fa-play"></i></ng-container>
                     <ng-container *ngIf="statusButton === 'Pause'"><i class="fa-solid fa-pause"></i></ng-container>
                     <ng-container *ngIf="statusButton === 'Resume'"><i class="fa-solid fa-play"></i></ng-container>

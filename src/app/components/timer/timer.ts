@@ -10,14 +10,14 @@ export enum statusButton {
 }
 
 @Component({
-selector: 'app-timer',
-   templateUrl: './timer.html',
+  selector: 'app-timer',
+  templateUrl: './timer.html',
   imports: [
     CommonModule,
     FormsModule,
     CustompercentagePipe
   ],
-   styleUrl: './timer.css'
+  styleUrl: './timer.css'
 })
 export class Timer implements OnInit {
   minutes?: number = 0;
@@ -29,14 +29,6 @@ export class Timer implements OnInit {
   statusButton: string = '';
   messageBox: string = 'زمان را وارد کنید';
   titleBTN: string = '';
-  today = new Date();
-
-  arr = [
-    { name: 'ali', age: 20 },
-    { name: 'hossein', age: 30 },
-    { name: 'mohammad', age: 40 },
-    { name: 'mahmoud', age: 50 },
-  ]
 
   ngOnInit(): void {
     this.disabled = false;
@@ -44,23 +36,20 @@ export class Timer implements OnInit {
     this.titleBTN = 'شروع';
   }
 
-sss(event: Event) {
-  debugger
-  const data = Number(event)
-  if(data && data > 0) {
-    this.disableStart = false;
-  } else {
-    this.disableStart = true;
-  }
+  sss(event: Event) {
+    const data = Number(event)
+    if (data && data > 0) {
+      this.disableStart = false;
+    } else {
+      this.disableStart = true;
+    }
 
-}
+  }
   startTimer() {
     if (this.statusButton === statusButton.Play) {
       this.disabled = true
       const statusBTN = this.statusButton;
       if (this.enterTime > 0 && statusBTN === statusButton.Play) {
-        debugger
-        // this.disableStart = false;
         this.statusButton = statusButton.Pause;
         this.titleBTN = 'وقفه';
         this.seconds = 59;
@@ -74,7 +63,6 @@ sss(event: Event) {
             }
           } else {
             clearInterval(this.setingInterval);
-            // alert('زمان به پایان رسید');
             this.messageBox = 'زمان به پایان رسید';
             this.statusButton = statusButton.Play;
             this.titleBTN = 'شروع';
@@ -84,7 +72,6 @@ sss(event: Event) {
         this.titleBTN = 'وقفه';
       }
       else if (this.enterTime > 0 && statusBTN !== statusButton.Play) {
-        // clearInterval(this.setingInterval);
       }
     }
     else if (this.statusButton === statusButton.Pause) {
