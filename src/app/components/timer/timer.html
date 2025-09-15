@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="box">
+        <div class="row timer">
+            <h1 style="font-size: 60px; color: white; font-family: sans-serif; margin-left: 15px;">{{ minutes | number:'2.0-0' }} : {{
+                seconds | number:'2.0-0' }}</h1>
+        </div>
+        <div class="buttons">
+            <div class="col-6">
+                <button style="color: black;" class="btn btn-primary startButton" [disabled]="disableStart" [title]="titleBTN" (click)="startTimer()">
+                    <!-- {{statusButton}} -->
+                    <ng-container *ngIf="statusButton === 'Play'"><i class="fa-solid fa-play"></i></ng-container>
+                    <ng-container *ngIf="statusButton === 'Pause'"><i class="fa-solid fa-pause"></i></ng-container>
+                    <ng-container *ngIf="statusButton === 'Resume'"><i class="fa-solid fa-play"></i></ng-container>
+                </button>
+            </div>
+            <div class="col-6">
+                <button style="color: black;" class="btn btn-primary startButton" title="پاک کردن" (click)="clearTimer()">
+                    <i class="fa-solid fa-eraser"></i>
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <input type="number" [(ngModel)]="enterTime" (ngModelChange)="sss($event)" (keydown.enter)="startTimer()"
+                    placeholder="Enter Time" [disabled]="disabled" />
+            </div>
+        </div>
+        <div class="row" style="font-size: 20px; color: white;">
+            {{messageBox}}
+        </div>
+        <div class="row" style="font-size: 20px; color: white; font-family: sans-serif;">
+            {{.1 | custompercentage}}
+        </div>
+    </div>
+</div>

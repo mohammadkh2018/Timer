@@ -1,0 +1,89 @@
+.box {
+    width: 280px;
+    height: 600px;
+    background-color: #527e5d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 120px;
+    height: 50px;
+    border-radius: 15px;
+    border: none;
+    text-align: center;
+}
+
+.startButton {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 30px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    align-items: stretch;
+    gap: 20px;
+    margin-left: 10px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 250px;
+    border: 7px solid #fffffe;
+    border-radius: 50%;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(250, 247, 248);
+    border: 5px solid red;
+    border-radius: 50%;
+    animation: circleTimer 6s linear;
+}
+
+@keyframes circleTimer {
+    100% {
+        color: red;
+    }
+
+    0% {
+        color: antiquewhite
+    }
+}
+
